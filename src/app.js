@@ -1,23 +1,15 @@
 const express = require("express");
-const main = require("./services/google-ai.service");
+const main = require("./services/google-ai.service.js");
+const getResponse = require("./routes/ai.route.js");
 
 const app = express();
 
 app.use(express.json());
 
 app.get("/", async(req, res) => {
-  const prompt = "hii";
-  
-  try{
-  const response = await main(prompt);
-  res.send("Hello from the server"+response);
-  }catch(error){
-    console.error("Gemini API Error:", error);
-    throw error;
-  }
- 
+  res.send("Hello World!");
 });
 
-// app.use("/ai",)
+app.use("/ai",getResponse);
 
 module.exports = app;

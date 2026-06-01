@@ -3,8 +3,7 @@ const { GoogleGenAI } = require("@google/genai");
 const { GOOGLE_GEMINI_API } = process.env;
 // const GOOGLE_API_KEY = process.env.GOOGLE_GEMINI_API;
 const GOOGLE_API_KEY = GOOGLE_GEMINI_API;
-const ai = new GoogleGenAI({apiKey: GOOGLE_API_KEY});
-
+const ai = new GoogleGenAI({ apiKey: GOOGLE_API_KEY });
 
 async function main(prompt) {
   const codeReviewerInstruction = `
@@ -19,7 +18,7 @@ CRITICAL RULES:
 2. If the user input is NOT code (for example: greetings like "Hi", general questions like "How are you?", random text, or essays), you must reject it instantly.
 3. For non-code inputs, your response must be exactly and ONLY: "Sorry, I only review code." Do not add any other words, greetings, or explanations.
 `;
-  try{
+  try {
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       systemInstruction: codeReviewerInstruction,
@@ -27,16 +26,14 @@ CRITICAL RULES:
       temperature: 0.3,
       maxOutputTokens: 100,
       topP: 1,
-      topK: 1
+      topK: 1,
     });
     console.log(response.text);
     return response.text;
-
-  }catch(error){
+  } catch (error) {
     console.error("Gemini API Error:", error);
     throw error;
   }
 }
-
 
 module.exports = main;
