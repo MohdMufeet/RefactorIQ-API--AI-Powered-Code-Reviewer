@@ -1,0 +1,37 @@
+{
+  "name": "refactor-iq",
+  "version": "1.0.0",
+  "description": "An AI-powered code reviewer built with MongoDB, Express, React, and Node.js. It analyzes code snippets for efficiency, flags bugs, and generates industry-standard refactored alternatives.",
+  "keywords": [
+    "mern-stack",
+    "•",
+    "ai-code-reviewer",
+    "•",
+    "react",
+    "•",
+    "nodejs",
+    "•",
+    "expressjs",
+    "•",
+    "mongodb",
+    "•",
+    "gemini-api",
+    "•",
+    "code-refactoring"
+  ],
+  "homepage": "https://github.com/MohdMufeet/RefactorIQ-AI-Powered-Code-Reviewer#readme",
+  "bugs": {
+    "url": "https://github.com/MohdMufeet/RefactorIQ-AI-Powered-Code-Reviewer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohdMufeet/RefactorIQ-AI-Powered-Code-Reviewer.git"
+  },
+  "license": "ISC",
+  "author": "Mohd-Mufeet",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "npx nodemon server.js"
+  }
+}
